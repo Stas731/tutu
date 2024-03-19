@@ -1,0 +1,24 @@
+<p style="color: green"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @railway_station.title %>
+</p>
+
+<% if @railway_station.routes.empty? %>
+  <p>Станция не принадлежит ни одному маршруту</p>
+<% else %>
+  <p>Станция принадлежит следующим маршрутам:</p>
+  <ul>
+    <% @railway_station.routes.each do |route| %>
+      <li><%= route.name %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<div>
+  <%= link_to "Edit", edit_railway_station_path(@railway_station) %> |
+  <%= link_to "Back", railway_stations_path %>
+
+  <%= button_to "Destroy this railway station", @railway_station, method: :delete %>
+</div>

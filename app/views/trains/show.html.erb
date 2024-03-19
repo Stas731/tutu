@@ -1,0 +1,21 @@
+<p style="color: green"><%= notice %></p>
+
+<p>
+  <strong>Номер:</strong>
+  <% if @train.current_station.present? %>
+  <%= @train.number %>
+  <% else %>
+  Не указано
+  <% end %>
+</p>
+
+<p>
+  <strong>На станции:</strong>
+  <%= @train.current_station.title %> 
+</p>
+<div>
+  <%= link_to "редактировать", edit_train_path(@train) %> |
+  <%= link_to "назад", trains_path %>
+
+  <%= button_to "Destroy train", @train, method: :delete %>
+</div>

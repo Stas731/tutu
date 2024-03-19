@@ -1,0 +1,15 @@
+<p style="color: green"><%= notice %></p>
+
+<p>
+  <strong>Название:</strong>
+  <%= @route.name %>
+</p>
+
+
+<div>
+  <%= link_to "Edit", edit_route_path(@route) %> |
+  <%= link_to "Back", routes_path %>
+
+  <%= button_to "Destroy this route", @route, method: :delete %>
+</div>
+
